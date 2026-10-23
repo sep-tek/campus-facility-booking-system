@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusReserve | Availability</title>
+  <meta name="description" content="Check demonstration availability schedules for university facilities by date, time slot and status.">
+</head>
+<body>
+  <a href="#main-content">Skip to main content</a>
+
+  <header>
+    <h1>CampusReserve</h1>
+    <p>University facility booking and scheduling.</p>
+    <p>Check facility availability by date and time slot.</p>
+  </header>
+
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="facilities.html">Facilities</a></li>
+      <li><a href="booking.html">Book a Facility</a></li>
+      <li><a href="availability.html" aria-current="page">Availability</a></li>
+      <li><a href="reservations.html">Reservations</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+    <section aria-labelledby="schedule-intro-heading">
+      <h2 id="schedule-intro-heading">Availability</h2>
+      <p>
+        Schedules are shown for Monday 19 to Wednesday 21 October 2026. <strong>These are
+        demonstration schedules, not live availability.</strong>
+      </p>
+    </section>
+
+    <section aria-labelledby="status-key-heading">
+      <h2 id="status-key-heading">Sample status values</h2>
+      <dl>
+        <dt>Available</dt>
+        <dd>Sample entry showing the space as free for that time slot.</dd>
+        <dt>Reserved</dt>
+        <dd>Sample entry showing the space as already held by a booking request.</dd>
+        <dt>Unavailable</dt>
+        <dd>Sample entry showing the space as closed for maintenance, timetabled teaching, or events.</dd>
+      </dl>
+    </section>
+
+    <section aria-labelledby="selected-schedule-heading">
+      <h2 id="selected-schedule-heading">Sample schedule by facility and time slot</h2>
+      <p>Sample data for four facilities across three sample weekdays, 19 to 21 October 2026.</p>
+
+      <table>
+        <caption>
+          Sample availability for four selected facilities, Monday 19 to Wednesday 21 October 2026
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Time slot</th>
+            <th scope="col">Facility</th>
+            <th scope="col">Facility reference</th>
+            <th scope="col">Sample status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Mon 19 Oct 2026</th>
+            <td>09:00 &ndash; 10:30</td>
+            <td>Sample Computer Laboratory A</td>
+            <td>LAB-101</td>
+            <td>Available</td>
+          </tr>
+          <tr>
+            <th scope="row">Mon 19 Oct 2026</th>
+            <td>09:00 &ndash; 10:30</td>
+            <td>Sample Lecture Hall 1</td>
+            <td>LTH-201</td>
+            <td>Reserved</td>
+          </tr>
+          <tr>
+            <th scope="row">Mon 19 Oct 2026</th>
+            <td>09:00 &ndash; 10:30</td>
+            <td>Sample Study Room 3</td>
+            <td>STU-003</td>
+            <td>Available</td>
+          </tr>
+          <tr>
+            <th scope="row">Mon 19 Oct 2026</th>
+            <td>09:00 &ndash; 10:30</td>
+            <td>Sample Meeting Room 5</td>
+            <td>MTR-005</td>
+            <td>Available</td>
+          </tr>
+          <tr>
+            <th scope="row">Mon 19 Oct 2026</th>
+            <td>11:00 &ndash; 12:30</td>
+            <td>Sample Computer Laboratory A</td>
+            <td>LAB-101</td>
+            <td>Reserved</td>
+          </tr>
+          <tr>
+            <th scope="row">Mon 19 Oct 2026</th>
+            <td>11:00 &ndash; 12:30</td>
+            <td>Sample Lecture Hall 1</td>
+            <td>LTH-201</td>
+            <td>Available</td>
+          </tr>
+          <tr>
+            <th scope="row">Mon 19 Oct 2026</th>
+            <td>11:00 &ndash; 12:30</td>
+            <td>Sample Study Room 3</td>
+            <td>STU-003</td>
+            <td>Unavailable</td>
+          </tr>
+          <tr>
+            <th scope="row">Mon 19 Oct 2026</th>
+            <td>11:00 &ndash; 12:30</td>
+            <td>Sample Meeting Room 5</td>
+            <td>MTR-005</td>
+            <td>Reserved</td>
+          </tr>
+          <tr>
+            <th scope="row">Mon 19 Oct 2026</th>
+            <td>14:00 &ndash; 15:30</td>
+            <td>Sample Computer Laboratory A</td>
+            <td>LAB-101</td>
+            <td>Available</td>
+          </tr>
+          <tr>
+            <th scope="row">Mon 19 Oct 2026</th>
+            <td>14:00 &ndash; 15:30</td>
+            <td>Sample Lecture Hall 1</td>
+            <td>LTH-201</td>
+            <td>Unavailable</td>
+          </tr>
+          <tr>
+            <th scope="row">Mon 19 Oct 2026</th>
+            <td>14:00 &ndash; 15:30</td>
+            <td>Sample Study Room 3</td>
+            <td>STU-003</td>
+            <td>Available</td>
+          </tr>
+          <tr>
+            <th scope="row">Mon 19 Oct 2026</th>
+            <td>14:00 &ndash; 15:30</td>
+            <td>Sample Meeting Room 5</td>
+            <td>MTR-005</td>
+            <td>Available</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="overview-schedule-heading">
+      <h2 id="overview-schedule-heading">Sample status by facility and day</h2>
+      <p>
+        Each cell shows the sample status for one facility on one day at the
+        <strong>09:00 &ndash; 10:30</strong> time slot, which is the first slot listed in the
+        detailed table above. For Monday 19 October these cells match the 09:00 &ndash; 10:30 rows of
+        that table exactly. Tuesday 20 and Wednesday 21 October appear only in this table, so they are
+        independent sample entries with no time-slot detail elsewhere on this page.
+      </p>
+
+      <table>
+        <caption>
+          Sample status at the 09:00 &ndash; 10:30 time slot for all seven catalogue facilities,
+          19 to 21 October 2026
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Facility</th>
+            <th scope="col">Facility reference</th>
+            <th scope="col">Mon 19 Oct 2026, 09:00 &ndash; 10:30</th>
+            <th scope="col">Tue 20 Oct 2026, 09:00 &ndash; 10:30</th>
+            <th scope="col">Wed 21 Oct 2026, 09:00 &ndash; 10:30</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Sample Computer Laboratory A</th>
+            <td>LAB-101</td>
+            <td>Available</td>
+            <td>Reserved</td>
+            <td>Available</td>
+          </tr>
+          <tr>
+            <th scope="row">Sample Computer Laboratory B</th>
+            <td>LAB-102</td>
+            <td>Reserved</td>
+            <td>Available</td>
+            <td>Unavailable</td>
+          </tr>
+          <tr>
+            <th scope="row">Sample Lecture Hall 1</th>
+            <td>LTH-201</td>
+            <td>Reserved</td>
+            <td>Unavailable</td>
+            <td>Available</td>
+          </tr>
+          <tr>
+            <th scope="row">Sample Lecture Hall 2</th>
+            <td>LTH-202</td>
+            <td>Available</td>
+            <td>Available</td>
+            <td>Reserved</td>
+          </tr>
+          <tr>
+            <th scope="row">Sample Study Room 3</th>
+            <td>STU-003</td>
+            <td>Available</td>
+            <td>Reserved</td>
+            <td>Available</td>
+          </tr>
+          <tr>
+            <th scope="row">Sample Study Room 4</th>
+            <td>STU-004</td>
+            <td>Unavailable</td>
+            <td>Available</td>
+            <td>Available</td>
+          </tr>
+          <tr>
+            <th scope="row">Sample Meeting Room 5</th>
+            <td>MTR-005</td>
+            <td>Available</td>
+            <td>Reserved</td>
+            <td>Reserved</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="schedule-notes-heading">
+      <h2 id="schedule-notes-heading">About these schedules</h2>
+      <p>
+        The dates and statuses are fixed examples that do not update. Facility details are on the
+        <a href="facilities.html">facilities page</a>, and you can
+        <a href="booking.html">send a booking request</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>CampusReserve</strong> &mdash; university facility booking and scheduling.</p>
+    <p>Facility details, schedules, and reservation records on this site are demonstration data.</p>
+  </footer>
+</body>
+</html>
