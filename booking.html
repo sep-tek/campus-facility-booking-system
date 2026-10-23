@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusReserve | Book a Facility</title>
+  <meta name="description" content="Send a university facility booking request with your contact details, chosen space, date, time and purpose.">
+</head>
+<body>
+  <a href="#main-content">Skip to main content</a>
+
+  <header>
+    <h1>CampusReserve</h1>
+    <p>University facility booking and scheduling.</p>
+    <p>Send a booking request for a campus facility.</p>
+  </header>
+
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="facilities.html">Facilities</a></li>
+      <li><a href="booking.html" aria-current="page">Book a Facility</a></li>
+      <li><a href="availability.html">Availability</a></li>
+      <li><a href="reservations.html">Reservations</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+    <section aria-labelledby="form-intro-heading">
+      <h2 id="form-intro-heading">Booking request</h2>
+      <p>
+        Complete the form below. Fields marked (required) must be filled in.
+      </p>
+      <p>
+        <strong>Please enter fictional details only.</strong> This page has nowhere to send the form,
+        so selecting <em>Submit request</em> simply reloads the page with your entries in the address
+        bar and in your browser history. Use sample details rather than your real name, university ID,
+        or email address. No booking is created.
+      </p>
+      <p>
+        Available spaces are listed in the <a href="facilities.html">facilities directory</a>.
+      </p>
+    </section>
+
+    <form aria-labelledby="booking-form-heading" method="get">
+      <h2 id="booking-form-heading">Booking request details</h2>
+      <p>Fields marked (required) must be filled in. Facility names and reference codes are those listed in the facilities directory.</p>
+
+      <fieldset>
+        <legend>Requester details</legend>
+
+        <p>
+          <label for="requester-name">Full name (required)</label>
+          <input type="text" id="requester-name" name="requester_name" autocomplete="name" required>
+        </p>
+
+        <p>
+          <label for="requester-id">University ID (required)</label>
+          <input type="text" id="requester-id" name="university_id" autocomplete="off" pattern="[A-Za-z0-9-]{5,12}" required aria-describedby="requester-id-hint">
+        </p>
+        <p id="requester-id-hint">
+          Enter 5 to 12 characters using letters, digits, or hyphens, for example S1023456.
+        </p>
+
+        <p>
+          <label for="requester-email">University email address (required)</label>
+          <input type="email" id="requester-email" name="requester_email" autocomplete="email" required>
+        </p>
+
+        <p>
+          <label for="requester-role">I am requesting this facility as (optional)</label>
+          <select id="requester-role" name="requester_role">
+            <option value="">Please choose</option>
+            <option value="student">A student</option>
+            <option value="staff">University staff</option>
+          </select>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Booking details</legend>
+
+        <p>
+          <label for="facility">Facility (required)</label>
+          <select id="facility" name="facility" required>
+            <option value="">Please choose a facility</option>
+            <option value="LAB-101">Sample Computer Laboratory A (LAB-101) &mdash; 30 workstations</option>
+            <option value="LAB-102">Sample Computer Laboratory B (LAB-102) &mdash; 24 workstations</option>
+            <option value="LTH-201">Sample Lecture Hall 1 (LTH-201) &mdash; 120 seats</option>
+            <option value="LTH-202">Sample Lecture Hall 2 (LTH-202) &mdash; 80 seats</option>
+            <option value="STU-003">Sample Study Room 3 (STU-003) &mdash; 6 seats</option>
+            <option value="STU-004">Sample Study Room 4 (STU-004) &mdash; 8 seats</option>
+            <option value="MTR-005">Sample Meeting Room 5 (MTR-005) &mdash; 12 seats</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="booking-date">Booking date (required)</label>
+          <input type="date" id="booking-date" name="booking_date" required>
+        </p>
+
+        <p>
+          <label for="start-time">Start time (required)</label>
+          <input type="time" id="start-time" name="start_time" required>
+        </p>
+
+        <p>
+          <label for="end-time">End time (required)</label>
+          <input type="time" id="end-time" name="end_time" required aria-describedby="end-time-hint">
+        </p>
+        <p id="end-time-hint">
+          Enter the time the booking should finish. This version cannot compare this with the start time.
+        </p>
+
+        <p>
+          <label for="attendees">Expected number of attendees (optional)</label>
+          <input type="number" id="attendees" name="attendees" min="1" max="200" step="1" aria-describedby="attendees-hint">
+        </p>
+        <p id="attendees-hint">
+          Enter a number between 1 and 200. Facility capacities are not checked by this version.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Purpose and confirmation</legend>
+
+        <p>
+          <label for="purpose">Purpose of the booking (required)</label>
+          <textarea id="purpose" name="purpose" rows="5" cols="50" maxlength="400" required aria-describedby="purpose-hint"></textarea>
+        </p>
+        <p id="purpose-hint">
+          Describe the activity in one or two sentences, for example a project group meeting or a
+          laboratory practical. Maximum 400 characters.
+        </p>
+
+        <p>
+          <input type="checkbox" id="agreement" name="agreement" value="yes" required>
+          <label for="agreement">
+            I confirm that the details above are accurate and that I will follow the published rules
+            for the facility I have selected (required).
+          </label>
+        </p>
+      </fieldset>
+
+      <p>
+        <button type="submit">Submit request</button>
+        <button type="reset">Clear form</button>
+      </p>
+
+      <p>
+        In the finished system, <em>Submit request</em> would send these values to a facility manager
+        for review and would create a reservation record with a reference number.
+      </p>
+    </form>
+  </main>
+
+  <footer>
+    <p><strong>CampusReserve</strong> &mdash; university facility booking and scheduling.</p>
+    <p>Facility details, schedules, and reservation records on this site are demonstration data.</p>
+  </footer>
+</body>
+</html>
