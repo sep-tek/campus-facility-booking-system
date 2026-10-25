@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusReserve | Reservations</title>
+  <meta name="description" content="View demonstration reservation records for university facilities, with reference number, facility, date, purpose and status.">
+</head>
+<body>
+  <a href="#main-content">Skip to main content</a>
+
+  <header>
+    <h1>CampusReserve</h1>
+    <p>University facility booking and scheduling.</p>
+    <p>View reservation records and their status.</p>
+  </header>
+
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="facilities.html">Facilities</a></li>
+      <li><a href="booking.html">Book a Facility</a></li>
+      <li><a href="availability.html">Availability</a></li>
+      <li><a href="reservations.html" aria-current="page">Reservations</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+    <section aria-labelledby="reservations-intro-heading">
+      <h2 id="reservations-intro-heading">Reservations</h2>
+      <p>
+        <strong>The records below are fictional demonstration data.</strong> They are not real
+        bookings and are not linked to any person or account.
+      </p>
+      <p>
+        <a href="booking.html">See how to send a booking request</a> for your own session.
+      </p>
+    </section>
+
+    <section aria-labelledby="status-key-heading">
+      <h2 id="status-key-heading">Sample status values</h2>
+      <dl>
+        <dt>Pending</dt>
+        <dd>Sample status for a request that has been recorded but not yet reviewed by a facility manager.</dd>
+        <dt>Approved</dt>
+        <dd>Sample status for a request that a facility manager has agreed to the space.</dd>
+        <dt>Rejected</dt>
+        <dd>Sample status for a request that was declined, for example because the space was required for maintenance or could not meet the group size.</dd>
+      </dl>
+    </section>
+
+    <section aria-labelledby="records-heading">
+      <h2 id="records-heading">Reservation records</h2>
+
+      <table>
+        <caption>
+          Demonstration reservation records, with reference numbers in the format CR-YYYY-NNN
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Reference number</th>
+            <th scope="col">Facility</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Purpose</th>
+            <th scope="col">Sample status</th>
+            <th scope="col">Sample reviewer note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">CR-2026-0141</th>
+            <td>Sample Computer Laboratory A (LAB-101)</td>
+            <td>Mon 12 Oct 2026</td>
+            <td>14:00 &ndash; 16:00</td>
+            <td>Group project development session</td>
+            <td>Approved</td>
+            <td>Sample record. Space released after the session.</td>
+          </tr>
+          <tr>
+            <th scope="row">CR-2026-0142</th>
+            <td>Sample Lecture Hall 1 (LTH-201)</td>
+            <td>Tue 13 Oct 2026</td>
+            <td>09:00 &ndash; 10:30</td>
+            <td>Guest lecture for an invited speaker</td>
+            <td>Approved</td>
+            <td>Sample record. Confirmed with the department office.</td>
+          </tr>
+          <tr>
+            <th scope="row">CR-2026-0143</th>
+            <td>Sample Study Room 3 (STU-003)</td>
+            <td>Wed 14 Oct 2026</td>
+            <td>16:00 &ndash; 18:00</td>
+            <td>Peer revision session</td>
+            <td>Rejected</td>
+            <td>Sample record. Declined because the room was closed for maintenance.</td>
+          </tr>
+          <tr>
+            <th scope="row">CR-2026-0144</th>
+            <td>Sample Meeting Room 5 (MTR-005)</td>
+            <td>Fri 16 Oct 2026</td>
+            <td>11:00 &ndash; 12:00</td>
+            <td>Student society committee meeting</td>
+            <td>Pending</td>
+            <td>Sample record. Awaiting review by the facility manager.</td>
+          </tr>
+          <tr>
+            <th scope="row">CR-2026-0145</th>
+            <td>Sample Computer Laboratory B (LAB-102)</td>
+            <td>Tue 20 Oct 2026</td>
+            <td>09:00 &ndash; 12:30</td>
+            <td>Laboratory practical with a teaching assistant</td>
+            <td>Pending</td>
+            <td>Sample record. Submitted but not yet reviewed.</td>
+          </tr>
+          <tr>
+            <th scope="row">CR-2026-0146</th>
+            <td>Sample Study Room 4 (STU-004)</td>
+            <td>Wed 21 Oct 2026</td>
+            <td>13:00 &ndash; 15:00</td>
+            <td>Small group assignment work</td>
+            <td>Approved</td>
+            <td>Sample record. Booked for a group of eight.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>CampusReserve</strong> &mdash; university facility booking and scheduling.</p>
+    <p>Facility details, schedules, and reservation records on this site are demonstration data.</p>
+  </footer>
+</body>
+</html>
