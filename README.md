@@ -67,6 +67,16 @@ before any photograph is added; it is not an image and is not displayed anywhere
   alternative text describing what the photograph actually shows, and a
   `<figcaption>` beside it.
 
+## Group Members
+
+| Full Name | Student ID | GitHub Username |
+|---|---|---|
+| Sofoneyas Arega | ETS1351/17 | Woboniaz |
+| Surafel Betre | ETS1376/17 | Surabetre |
+| Solomon Mehabew | ETS1362/17 | Solo-moon12 |
+| Teklehaymanot Gashaw | ETS1391/17 | sep-tek |
+| Bereket Bitew | ETS1851/17 | bereketmekonen27-del |
+
 ## Git
 
 This is a group project, so work is committed in small, reviewable steps. Branches,
