@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CampusReserve | Availability</title>
   <meta name="description" content="Check demonstration availability schedules for university facilities by date, time slot and status.">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="page-availability">
   <a href="#main-content">Skip to main content</a>
 
   <header>
@@ -38,11 +39,11 @@
     <section aria-labelledby="status-key-heading">
       <h2 id="status-key-heading">Sample status values</h2>
       <dl>
-        <dt>Available</dt>
+        <dt class="status status--available">Available</dt>
         <dd>Sample entry showing the space as free for that time slot.</dd>
-        <dt>Reserved</dt>
+        <dt class="status status--reserved">Reserved</dt>
         <dd>Sample entry showing the space as already held by a booking request.</dd>
-        <dt>Unavailable</dt>
+        <dt class="status status--unavailable">Unavailable</dt>
         <dd>Sample entry showing the space as closed for maintenance, timetabled teaching, or events.</dd>
       </dl>
     </section>
@@ -51,7 +52,8 @@
       <h2 id="selected-schedule-heading">Sample schedule by facility and time slot</h2>
       <p>Sample data for four facilities across three sample weekdays, 19 to 21 October 2026.</p>
 
-      <table>
+      <div class="table-scroll">
+        <table>
         <caption>
           Sample availability for four selected facilities, Monday 19 to Wednesday 21 October 2026
         </caption>
@@ -70,87 +72,88 @@
             <td>09:00 &ndash; 10:30</td>
             <td>Sample Computer Laboratory A</td>
             <td>LAB-101</td>
-            <td>Available</td>
+            <td class="status status--available">Available</td>
           </tr>
           <tr>
             <th scope="row">Mon 19 Oct 2026</th>
             <td>09:00 &ndash; 10:30</td>
             <td>Sample Lecture Hall 1</td>
             <td>LTH-201</td>
-            <td>Reserved</td>
+            <td class="status status--reserved">Reserved</td>
           </tr>
           <tr>
             <th scope="row">Mon 19 Oct 2026</th>
             <td>09:00 &ndash; 10:30</td>
             <td>Sample Study Room 3</td>
             <td>STU-003</td>
-            <td>Available</td>
+            <td class="status status--available">Available</td>
           </tr>
           <tr>
             <th scope="row">Mon 19 Oct 2026</th>
             <td>09:00 &ndash; 10:30</td>
             <td>Sample Meeting Room 5</td>
             <td>MTR-005</td>
-            <td>Available</td>
+            <td class="status status--available">Available</td>
           </tr>
           <tr>
             <th scope="row">Mon 19 Oct 2026</th>
             <td>11:00 &ndash; 12:30</td>
             <td>Sample Computer Laboratory A</td>
             <td>LAB-101</td>
-            <td>Reserved</td>
+            <td class="status status--reserved">Reserved</td>
           </tr>
           <tr>
             <th scope="row">Mon 19 Oct 2026</th>
             <td>11:00 &ndash; 12:30</td>
             <td>Sample Lecture Hall 1</td>
             <td>LTH-201</td>
-            <td>Available</td>
+            <td class="status status--available">Available</td>
           </tr>
           <tr>
             <th scope="row">Mon 19 Oct 2026</th>
             <td>11:00 &ndash; 12:30</td>
             <td>Sample Study Room 3</td>
             <td>STU-003</td>
-            <td>Unavailable</td>
+            <td class="status status--unavailable">Unavailable</td>
           </tr>
           <tr>
             <th scope="row">Mon 19 Oct 2026</th>
             <td>11:00 &ndash; 12:30</td>
             <td>Sample Meeting Room 5</td>
             <td>MTR-005</td>
-            <td>Reserved</td>
+            <td class="status status--reserved">Reserved</td>
           </tr>
           <tr>
             <th scope="row">Mon 19 Oct 2026</th>
             <td>14:00 &ndash; 15:30</td>
             <td>Sample Computer Laboratory A</td>
             <td>LAB-101</td>
-            <td>Available</td>
+            <td class="status status--available">Available</td>
           </tr>
           <tr>
             <th scope="row">Mon 19 Oct 2026</th>
             <td>14:00 &ndash; 15:30</td>
             <td>Sample Lecture Hall 1</td>
             <td>LTH-201</td>
-            <td>Unavailable</td>
+            <td class="status status--unavailable">Unavailable</td>
           </tr>
           <tr>
             <th scope="row">Mon 19 Oct 2026</th>
             <td>14:00 &ndash; 15:30</td>
             <td>Sample Study Room 3</td>
             <td>STU-003</td>
-            <td>Available</td>
+            <td class="status status--available">Available</td>
           </tr>
           <tr>
             <th scope="row">Mon 19 Oct 2026</th>
             <td>14:00 &ndash; 15:30</td>
             <td>Sample Meeting Room 5</td>
             <td>MTR-005</td>
-            <td>Available</td>
+            <td class="status status--available">Available</td>
           </tr>
         </tbody>
       </table>
+      </div>
     </section>
 
     <section aria-labelledby="overview-schedule-heading">
@@ -163,7 +166,8 @@
         independent sample entries with no time-slot detail elsewhere on this page.
       </p>
 
-      <table>
+      <div class="table-scroll">
+        <table>
         <caption>
           Sample status at the 09:00 &ndash; 10:30 time slot for all seven catalogue facilities,
           19 to 21 October 2026
@@ -181,54 +185,55 @@
           <tr>
             <th scope="row">Sample Computer Laboratory A</th>
             <td>LAB-101</td>
-            <td>Available</td>
-            <td>Reserved</td>
-            <td>Available</td>
+            <td class="status status--available">Available</td>
+            <td class="status status--reserved">Reserved</td>
+            <td class="status status--available">Available</td>
           </tr>
           <tr>
             <th scope="row">Sample Computer Laboratory B</th>
             <td>LAB-102</td>
-            <td>Reserved</td>
-            <td>Available</td>
-            <td>Unavailable</td>
+            <td class="status status--reserved">Reserved</td>
+            <td class="status status--available">Available</td>
+            <td class="status status--unavailable">Unavailable</td>
           </tr>
           <tr>
             <th scope="row">Sample Lecture Hall 1</th>
             <td>LTH-201</td>
-            <td>Reserved</td>
-            <td>Unavailable</td>
-            <td>Available</td>
+            <td class="status status--reserved">Reserved</td>
+            <td class="status status--unavailable">Unavailable</td>
+            <td class="status status--available">Available</td>
           </tr>
           <tr>
             <th scope="row">Sample Lecture Hall 2</th>
             <td>LTH-202</td>
-            <td>Available</td>
-            <td>Available</td>
-            <td>Reserved</td>
+            <td class="status status--available">Available</td>
+            <td class="status status--available">Available</td>
+            <td class="status status--reserved">Reserved</td>
           </tr>
           <tr>
             <th scope="row">Sample Study Room 3</th>
             <td>STU-003</td>
-            <td>Available</td>
-            <td>Reserved</td>
-            <td>Available</td>
+            <td class="status status--available">Available</td>
+            <td class="status status--reserved">Reserved</td>
+            <td class="status status--available">Available</td>
           </tr>
           <tr>
             <th scope="row">Sample Study Room 4</th>
             <td>STU-004</td>
-            <td>Unavailable</td>
-            <td>Available</td>
-            <td>Available</td>
+            <td class="status status--unavailable">Unavailable</td>
+            <td class="status status--available">Available</td>
+            <td class="status status--available">Available</td>
           </tr>
           <tr>
             <th scope="row">Sample Meeting Room 5</th>
             <td>MTR-005</td>
-            <td>Available</td>
-            <td>Reserved</td>
-            <td>Reserved</td>
+            <td class="status status--available">Available</td>
+            <td class="status status--reserved">Reserved</td>
+            <td class="status status--reserved">Reserved</td>
           </tr>
         </tbody>
       </table>
+      </div>
     </section>
 
     <section aria-labelledby="schedule-notes-heading">
