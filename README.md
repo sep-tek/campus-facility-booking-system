@@ -16,23 +16,46 @@ availability schedules, and prepare booking requests. At this stage forms and
 schedules are illustrative only: there is no booking engine, login system,
 database, or automatic conflict detection.
 
-## Current phase: HTML only
+## Current phase: CSS foundation and page styling
 
-Phase 1 delivers the HTML foundation only. This phase intentionally contains:
+The six-page HTML foundation is complete. The project is now in the CSS
+development phase: the shared CSS foundation has been created, three visual
+themes are available, and page-specific CSS has been separated so group members
+can work independently.
+
+Completed so far:
 
 - Semantic HTML5 markup for six pages
 - Shared navigation, footer text, and a working skip-to-main-content link
 - Sample facility, schedule, and reservation data written directly into the pages
+- A centralized `styles.css` shared foundation containing design tokens, all
+  three theme definitions, typography, accessibility rules, header and
+  navigation styling, the theme selector, reusable components, the footer, and
+  global responsive rules
+- Three visual themes:
+  - **Lime Afterdark** - default theme
+  - **Midnight Professional** - alternate theme
+  - **Coastal Classic** - alternate theme
+- An existing theme switcher implemented in `theme.js`; it stores the selected
+  theme in `localStorage` and applies it to the page
+- Page-specific CSS split into separate files under `css/pages/` and
+  `css/shared/`
+- Page-specific CSS contributions being distributed among four group members,
+  while the shared foundation and HTML stylesheet integration remain
+  team-leader responsibilities
 
-Deliberately **not** included at this phase:
+The only JavaScript currently in the project is `theme.js`, which handles theme
+switching. Future JavaScript application functionality is separate from this
+existing theme behavior. The following are not implemented yet:
 
-- No CSS (no stylesheets, no inline `style` attributes)
-- No JavaScript (no scripts, no inline event handlers)
-- No frameworks, libraries, build tools, or package installations
-- No backend, API, or database
+- Booking submission, validation, or persistence logic
+- Login or user accounts
+- Backend, API, or database
+- Automatic conflict detection
 
-CSS and JavaScript are planned for later course phases, after the HTML has been
-reviewed.
+The project still does not use frameworks, libraries, build tools, package
+installations, or external CSS dependencies. Forms and schedules remain
+illustrative only.
 
 ## Project structure
 
@@ -44,20 +67,36 @@ reviewed.
 ├── availability.html   Illustrative sample availability schedule tables
 ├── reservations.html   Static example reservation records
 ├── about.html          What CampusReserve is, facilities, who it is for, how to use it
+├── styles.css          Shared CSS foundation: tokens, themes, typography, layout, components
+├── theme.js            Existing theme switcher using localStorage
+├── css/
+│   ├── pages/
+│   │   ├── home-hero.css       Homepage hero section
+│   │   ├── booking.css         Booking form page
+│   │   ├── home-sections.css   Homepage categories, booking process, and spaces sections
+│   │   └── facilities.css      Facilities page refinements
+│   └── shared/
+│       └── tables.css          Availability and reservation table/status styles
 ├── images/             Campus photographs (WebP) used on the homepage
+├── .gitignore
 └── README.md
 ```
 
 All six pages sit at the repository root and link to each other with relative
 paths, so the prototype works when opened directly from the file system with no
-server. `images/.gitkeep` is retained so the directory is tracked by Git even
-before any photograph is added; it is not an image and is not displayed anywhere.
+server. Each page loads `styles.css` first, followed by its page-specific
+stylesheet where one exists, and then the deferred `theme.js`. The `images/`
+directory contains the WebP campus photographs used on the homepage.
+`images/.gitkeep` is retained so the directory stays tracked by Git; it is not an
+image and is not displayed anywhere.
 
 ## Conventions used in this phase
 
+### HTML and accessibility
+
 - One `<h1>` per page, with a logical heading hierarchy below it.
-- A visible skip link as the first element in `<body>`, targeting `#main-content`
-  on `<main>`. It is unstyled until CSS is added in a later phase.
+- A skip link as the first element in `<body>`, targeting `#main-content` on
+  `<main>`. It becomes visible when focused by keyboard.
 - Every page repeats the same six navigation links and marks the current page with
   `aria-current="page"`.
 - Every data table has a `<caption>`, `scope="col"` column headers, and
@@ -66,6 +105,33 @@ before any photograph is added; it is not an image and is not displayed anywhere
 - Images appear only where a matching file exists in `images/`. Each `<img>` has
   alternative text describing what the photograph actually shows, and a
   `<figcaption>` beside it.
+- Existing HTML content, form fields, IDs, names, actions, methods, navigation
+  destinations, tables, and statuses are preserved when styling changes.
+
+### CSS architecture and themes
+
+- `styles.css` is loaded first and is the shared foundation. It contains the
+  design tokens, all three theme definitions, typography, accessibility rules,
+  header and navigation styling, the theme selector, reusable components, the
+  footer, and global responsive and reduced-motion rules.
+- Page-specific rules live in `css/pages/` and `css/shared/` and are loaded after
+  `styles.css`.
+- Page-specific styles use the existing CSS custom properties from `styles.css`;
+  they do not define separate theme palettes.
+- Lime Afterdark is the default theme. Midnight Professional and Coastal Classic
+  are selected through the existing theme switcher.
+- The theme switcher is implemented in `theme.js` and stores the selected theme
+  in `localStorage`.
+- The shared foundation is team-leader-owned. Page-specific files are divided
+  among four group members so contributors do not edit the same stylesheet.
+- No CSS frameworks or external style dependencies are used.
+
+## JavaScript scope
+
+The only JavaScript currently in the project is `theme.js`, which handles theme
+selection. Application JavaScript for booking submission, validation, data
+storage, or conflict detection is future work and is intentionally separate from
+the CSS phase.
 
 ## Group Members
 
