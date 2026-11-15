@@ -1,0 +1,217 @@
+/* ==========================================================================
+   CampusReserve - booking form
+   Page-specific styles for the booking request form.
+   ========================================================================== */
+
+body.page-booking main > form {
+  margin-top: clamp(2rem, 5vw, 4rem);
+  padding: clamp(1.2rem, 3vw, 2.5rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(155deg, var(--surface), var(--bg-secondary));
+  box-shadow: var(--shadow);
+}
+
+body.page-booking form > h2 {
+  margin-bottom: 0.6rem;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+}
+
+body.page-booking form > p {
+  max-width: 72ch;
+  color: var(--text-secondary);
+}
+
+body.page-booking fieldset {
+  margin: clamp(1.4rem, 3vw, 2rem) 0 0;
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--overlay);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 1rem;
+}
+
+body.page-booking legend {
+  padding: 0 0.5rem;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+body.page-booking fieldset > p {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+body.page-booking fieldset > p[id],
+body.page-booking fieldset > p:has(textarea),
+body.page-booking fieldset > p:has(input[type="checkbox"]) {
+  grid-column: 1 / -1;
+}
+
+body.page-booking fieldset > p[id] {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+body.page-booking label {
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+body.page-booking input:not([type="checkbox"]),
+body.page-booking select,
+body.page-booking textarea {
+  width: 100%;
+  min-height: 2.9rem;
+  padding: 0.72rem 0.85rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.92rem;
+  transition:
+    border-color var(--ease),
+    box-shadow var(--ease),
+    background-color var(--ease);
+}
+
+body.page-booking textarea {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+body.page-booking select {
+  padding-right: 2.4rem;
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--text-secondary) 50%),
+    linear-gradient(135deg, var(--text-secondary) 50%, transparent 50%);
+  background-position:
+    calc(100% - 1.1rem) calc(50% - 0.12rem),
+    calc(100% - 0.82rem) calc(50% - 0.12rem);
+  background-size: 0.34rem 0.34rem, 0.34rem 0.34rem;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+body.page-booking select option {
+  background: var(--bg-secondary);
+  color: var(--text);
+}
+
+body.page-booking input:not([type="checkbox"]):focus,
+body.page-booking select:focus,
+body.page-booking textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background-color: var(--surface);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+body.page-booking input[type="checkbox"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin: 0.2rem 0 0;
+  flex: none;
+  accent-color: var(--accent);
+}
+
+body.page-booking fieldset > p:has(input[type="checkbox"]) {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+body.page-booking fieldset > p:has(input[type="checkbox"]) label {
+  color: var(--text-secondary);
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+body.page-booking form > p:has(button) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.4rem;
+}
+
+body.page-booking button {
+  min-height: 2.9rem;
+  padding: 0.75rem 1.2rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform var(--ease),
+    background-color var(--ease),
+    border-color var(--ease),
+    color var(--ease),
+    box-shadow var(--ease);
+}
+
+body.page-booking button[type="submit"] {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  box-shadow: 0 10px 26px var(--accent-glow);
+}
+
+body.page-booking button[type="reset"] {
+  border-color: var(--border-strong);
+  background: transparent;
+  color: var(--text);
+}
+
+body.page-booking button:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+
+body.page-booking form > p:last-of-type {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.page-booking button:hover {
+    transform: translateY(-1px);
+  }
+
+  body.page-booking button[type="submit"]:hover {
+    box-shadow: 0 14px 32px var(--accent-glow);
+  }
+
+  body.page-booking button[type="reset"]:hover {
+    border-color: var(--accent);
+    background: var(--overlay-strong);
+    color: var(--accent);
+  }
+}
+
+@media (max-width: 760px) {
+  body.page-booking fieldset {
+    grid-template-columns: 1fr;
+  }
+
+  body.page-booking form > p:has(button) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  body.page-booking button {
+    width: 100%;
+  }
+}
