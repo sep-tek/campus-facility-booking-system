@@ -1,0 +1,199 @@
+/* ==========================================================================
+   CampusReserve - homepage hero
+   Page-specific styles for the homepage hero section.
+   ========================================================================== */
+
+body.page-home main > section:first-of-type {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+  grid-template-areas:
+    "title media"
+    "copy media"
+    "cta media";
+  gap: 0.9rem clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+  padding: clamp(1.4rem, 3.5vw, 3rem);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 18% 12%, var(--accent-soft), transparent 38%),
+    linear-gradient(145deg, var(--surface) 0%, var(--bg-secondary) 78%);
+  box-shadow: var(--shadow);
+}
+
+body.page-home main > section:first-of-type::after {
+  content: "";
+  position: absolute;
+  top: -18rem;
+  right: -14rem;
+  z-index: -1;
+  width: 34rem;
+  height: 34rem;
+  border-radius: 50%;
+  background: var(--accent-glow);
+  filter: blur(80px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+body.page-home main > section:first-of-type > * {
+  position: relative;
+  z-index: 1;
+}
+
+body.page-home main > section:first-of-type h2 {
+  grid-area: title;
+  max-width: 11ch;
+  font-size: clamp(3rem, 7.2vw, 6.3rem);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+body.page-home main > section:first-of-type .hero-accent {
+  color: var(--accent);
+  font-style: italic;
+  font-weight: 500;
+}
+
+body.page-home main > section:first-of-type > p:nth-of-type(1) {
+  grid-area: copy;
+  max-width: 52ch;
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+}
+
+body.page-home main > section:first-of-type > p:nth-of-type(2) {
+  grid-area: cta;
+  margin-top: 0.55rem;
+}
+
+body.page-home main > section:first-of-type > p:nth-of-type(2) a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 30px var(--accent-glow);
+  transition:
+    transform var(--ease),
+    box-shadow var(--ease),
+    background-color var(--ease);
+}
+
+body.page-home main > section:first-of-type > p:nth-of-type(2) a::after {
+  content: "→";
+  font-size: 1.05em;
+  transition: transform var(--ease);
+}
+
+body.page-home main > section:first-of-type > p:nth-of-type(2) a:focus-visible {
+  outline-color: var(--text);
+}
+
+body.page-home main > section:first-of-type figure {
+  grid-area: media;
+  position: relative;
+  align-self: stretch;
+  min-height: 420px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius-lg) - 0.35rem);
+  background: var(--surface-elevated);
+}
+
+body.page-home main > section:first-of-type figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 52%, rgba(8, 9, 8, 0.78) 100%);
+  pointer-events: none;
+}
+
+body.page-home main > section:first-of-type img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 600ms ease;
+}
+
+body.page-home main > section:first-of-type figcaption {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 2;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(8, 9, 8, 0.62);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  color: var(--text);
+  font-size: 0.76rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.page-home main > section:first-of-type > p:nth-of-type(2) a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 36px var(--accent-glow);
+  }
+
+  body.page-home main > section:first-of-type > p:nth-of-type(2) a:hover::after {
+    transform: translateX(0.2rem);
+  }
+
+  body.page-home main > section:first-of-type figure:hover img {
+    transform: scale(1.03);
+  }
+}
+
+@media (max-width: 980px) {
+  body.page-home main > section:first-of-type {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "copy"
+      "cta"
+      "media";
+  }
+
+  body.page-home main > section:first-of-type h2 {
+    max-width: 14ch;
+  }
+
+  body.page-home main > section:first-of-type figure {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 760px) {
+  body.page-home main > section:first-of-type {
+    padding: 1.1rem;
+    border-radius: var(--radius-md);
+  }
+
+  body.page-home main > section:first-of-type h2 {
+    font-size: clamp(2.7rem, 13vw, 4.2rem);
+  }
+
+  body.page-home main > section:first-of-type figure {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 520px) {
+  body.page-home main > section:first-of-type > p:nth-of-type(2) a {
+    width: 100%;
+    justify-content: center;
+  }
+}
