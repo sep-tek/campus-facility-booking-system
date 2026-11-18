@@ -6,6 +6,8 @@
   <title>CampusReserve | About</title>
   <meta name="description" content="About CampusReserve: what it is, who it is for, the facilities you can explore, and how to send a booking request.">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/shared/lists.css">
+  <script src="theme.js" defer></script>
 </head>
 <body class="page-about">
   <a href="#main-content">Skip to main content</a>
@@ -24,6 +26,32 @@
       <li><a href="availability.html">Availability</a></li>
       <li><a href="reservations.html">Reservations</a></li>
       <li><a href="about.html" aria-current="page">About</a></li>
+      <li class="theme-switcher">
+        <div class="theme-switcher__control" role="radiogroup" aria-labelledby="theme-switcher-label">
+          <span class="theme-switcher__label" id="theme-switcher-label">Theme</span>
+          <label class="theme-option">
+            <input class="theme-option__input" type="radio" name="theme" value="lime" aria-label="Lime Afterdark" checked>
+            <span class="theme-option__surface">
+              <span class="theme-option__swatch theme-option__swatch--lime" aria-hidden="true"></span>
+              <span class="theme-option__name">Lime</span>
+            </span>
+          </label>
+          <label class="theme-option">
+            <input class="theme-option__input" type="radio" name="theme" value="midnight" aria-label="Midnight Professional">
+            <span class="theme-option__surface">
+              <span class="theme-option__swatch theme-option__swatch--midnight" aria-hidden="true"></span>
+              <span class="theme-option__name">Midnight</span>
+            </span>
+          </label>
+          <label class="theme-option">
+            <input class="theme-option__input" type="radio" name="theme" value="coastal" aria-label="Coastal Classic">
+            <span class="theme-option__surface">
+              <span class="theme-option__swatch theme-option__swatch--coastal" aria-hidden="true"></span>
+              <span class="theme-option__name">Coastal</span>
+            </span>
+          </label>
+        </div>
+      </li>
     </ul>
   </nav>
 
