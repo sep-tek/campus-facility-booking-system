@@ -1,0 +1,169 @@
+/* ==========================================================================
+   CampusReserve - availability and reservation tables
+   Shared page-group styles for tables, status indicators, and table states.
+   ========================================================================== */
+
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+body.page-availability table {
+  min-width: 720px;
+}
+
+body.page-reservations table {
+  min-width: 900px;
+}
+
+caption {
+  caption-side: top;
+  padding: 0.9rem 1rem 0.6rem;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  text-align: left;
+}
+
+thead {
+  background: var(--overlay);
+}
+
+th,
+td {
+  padding: 0.75rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+thead th {
+  color: var(--text-secondary);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+tbody th {
+  color: var(--text);
+  font-weight: 600;
+}
+
+tbody td {
+  color: var(--text-secondary);
+}
+
+tbody tr {
+  transition: background-color var(--ease);
+}
+
+tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+body.page-availability tbody td:nth-child(2) {
+  white-space: nowrap;
+}
+
+body.page-availability main > section[aria-labelledby="selected-schedule-heading"] tbody td:nth-child(4),
+body.page-availability main > section[aria-labelledby="overview-schedule-heading"] tbody td:nth-child(2),
+body.page-reservations tbody th[scope="row"] {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+.status {
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.status::before {
+  display: inline-block;
+  margin-right: 0.45rem;
+  font-size: 0.95em;
+  line-height: 1;
+}
+
+main > section > dl dt.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+}
+
+main > section > dl dt.status::before {
+  margin-right: 0;
+}
+
+.status--available,
+.status--approved {
+  color: var(--accent);
+}
+
+.status--available::before,
+.status--approved::before {
+  content: "✓";
+}
+
+.status--reserved,
+.status--pending {
+  color: var(--warning);
+}
+
+.status--reserved::before,
+.status--pending::before {
+  content: "◷";
+}
+
+.status--unavailable,
+.status--rejected {
+  color: var(--danger);
+}
+
+.status--unavailable::before,
+.status--rejected::before {
+  content: "×";
+}
+
+@media (hover: hover) and (pointer: fine) {
+  tbody tr:hover {
+    background: var(--overlay);
+  }
+}
+
+@media (max-width: 760px) {
+  table {
+    min-width: 620px;
+  }
+}
+
+@media (max-width: 520px) {
+  .table-scroll {
+    border-radius: var(--radius-sm);
+  }
+
+  table {
+    min-width: 560px;
+    font-size: 0.82rem;
+  }
+
+  th,
+  td {
+    padding: 0.65rem 0.75rem;
+  }
+}
