@@ -1,0 +1,86 @@
+/* ==========================================================================
+   CampusReserve - homepage supporting sections
+   Page-specific styles for categories, booking process, and spaces sections.
+   ========================================================================== */
+
+body.page-home main > section[aria-labelledby="categories-heading"] > p:last-child,
+body.page-home main > section[aria-labelledby="booking-process-heading"] > p:last-child {
+  margin-top: 1.3rem;
+}
+
+body.page-home main > section[aria-labelledby="categories-heading"] > p:last-child a,
+body.page-home main > section[aria-labelledby="booking-process-heading"] > p:last-child a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    color var(--ease),
+    border-color var(--ease),
+    background-color var(--ease);
+}
+
+body.page-home main > section[aria-labelledby="categories-heading"] > p:last-child a::after,
+body.page-home main > section[aria-labelledby="booking-process-heading"] > p:last-child a::after {
+  content: "→";
+  transition: transform var(--ease);
+}
+
+body.page-home main > section[aria-labelledby="spaces-heading"] {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 1rem;
+}
+
+body.page-home main > section[aria-labelledby="spaces-heading"] > h2,
+body.page-home main > section[aria-labelledby="spaces-heading"] > p {
+  grid-column: 1 / -1;
+}
+
+body.page-home main > section[aria-labelledby="spaces-heading"] figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+body.page-home main > section[aria-labelledby="spaces-heading"] img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 500ms ease;
+}
+
+body.page-home main > section[aria-labelledby="spaces-heading"] figcaption {
+  padding: 0.75rem 0.9rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.page-home main > section[aria-labelledby="categories-heading"] > p:last-child a:hover,
+  body.page-home main > section[aria-labelledby="booking-process-heading"] > p:last-child a:hover {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+
+  body.page-home main > section[aria-labelledby="categories-heading"] > p:last-child a:hover::after,
+  body.page-home main > section[aria-labelledby="booking-process-heading"] > p:last-child a:hover::after {
+    transform: translateX(0.2rem);
+  }
+
+  body.page-home main > section[aria-labelledby="spaces-heading"] figure:hover img {
+    transform: scale(1.03);
+  }
+}

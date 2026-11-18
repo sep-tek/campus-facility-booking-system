@@ -1,0 +1,9 @@
+/* ==========================================================================
+   CampusReserve - facilities page
+   Page-specific refinements for the facility directory.
+   ========================================================================== */
+
+body.page-facilities a[href="availability.html"] {
+  color: var(--accent);
+  font-weight: 600;
+}
